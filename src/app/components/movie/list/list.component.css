@@ -1,0 +1,43 @@
+.card {
+    border: 1px solid #ffffff;
+    padding: 10px;
+    margin: 10px;
+    min-width: 200px;
+    max-width: 300px;
+    min-height: 150px;
+    max-height: 300px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: rgb(216, 216, 216);
+}
+
+.card:hover{
+    background-color: grey;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0;
+}
+
+li {
+    margin: 0;
+}
+
+.tag {
+    padding: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 3px;
+}
+
+/* p {
+    margin: 5px 0 0;
+    font-size: 0.8em;
+    color: #888;
+} */

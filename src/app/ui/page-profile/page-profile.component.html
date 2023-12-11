@@ -1,0 +1,52 @@
+<div class="d-flex caja">
+    <div class="degradado text-center">
+        <img [src]="getAvatar()" alt="Avatar del usuario" class="mb-4 avatar">
+        <h2 class="text-light">{{getUsername()}}</h2>
+        <img src="./assets/img/logoTMDB.png" alt="Logotipo de la web" class="w-75">
+    </div>
+    <div class="menu">
+        <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs mt-5">
+            <li [ngbNavItem]="1">
+                <button ngbNavLink>Favorite</button>
+                <ng-template ngbNavContent>
+                    <div class="lists">
+                        <div class="container">
+                            <div class="row">
+                                <app-movie-item-list class="item col-4 pt-5" *ngFor="let m of movieListFavorite"
+                                    [movie]="m"></app-movie-item-list>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+                <button ngbNavLink>Watch List</button>
+                <ng-template ngbNavContent>
+                    <div class="lists">
+                        <div class="container">
+                            <div class="row">
+                                <app-movie-item-list class="col-3 ps-5 pt-5" *ngFor="let m of movieListWatchList"
+                                    [movie]="m"></app-movie-item-list>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="3">
+                <button ngbNavLink>Custom Lists</button>
+                <ng-template ngbNavContent>
+                    <div class="lists">
+                        <div class="container">
+                            <div class="row">
+                                <app-list class="col-3 ps-5 pt-5" *ngFor="let l of movieLists"
+                                    [list]="l"></app-list>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+        </ul>
+
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<app-full-with-carrusell></app-full-with-carrusell>
+
+<h4>Popular Movies</h4>
+<ul class="list-group list-group-horizontal position-relative overflow-auto">
+    <app-movie-item-list class="list-group-item mx-5" *ngFor="let m of movieList" [movie]="m"></app-movie-item-list>
+</ul>
+
+<h4>Popular Series</h4>
+<ul class="list-group list-group-horizontal position-relative overflow-auto mb-4">
+    <app-serie-item-list class="list-group-item mx-5" *ngFor="let s of serieList" [serie]="s"></app-serie-item-list>
+</ul>

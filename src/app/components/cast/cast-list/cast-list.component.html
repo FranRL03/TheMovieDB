@@ -1,0 +1,21 @@
+<div class="contenedor">
+    <img [src]="getImage()" alt="" width="270px">
+    <div class="text container">
+        <div class="d-flex justify-content-between pt-3">
+
+            <div class="title">
+                <h5 class="title"><strong>{{cast.original_name}}</strong></h5>
+            </div>
+
+        </div>
+        <div class="mt-auto d-flex justify-content-between pt-3">
+
+            <div class="pt-2 title">
+                <p class="title">{{cast.character}}</p>
+            </div>
+
+            <button type="button" class="boton btn rounded-3" (click)="actorDetails(cast.id)">More Info</button>
+
+        </div>
+    </div>
+</div>

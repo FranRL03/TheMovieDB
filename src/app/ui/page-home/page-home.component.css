@@ -1,0 +1,38 @@
+ul {
+    width: 90%;
+    margin-left: 4%;
+}
+
+h4 {
+    color: white;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.list-group-horizontal>.list-group-item:first-child:not(:last-child) {
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+}
+
+.list-group-item {
+    background-color: transparent;
+    border: none;
+    max-width: 200px;
+}
+
+ul::-webkit-scrollbar {
+    height: 12px;
+}
+
+ul::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: #D62247;
+    border-radius: 6px;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+    background: #90152F;
+}

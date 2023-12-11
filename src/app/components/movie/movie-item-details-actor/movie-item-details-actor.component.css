@@ -1,0 +1,44 @@
+img {
+    border-radius: 5%;
+}
+
+
+.contenedor {
+    position: relative;
+    min-width: 250px;
+}
+
+.text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: 120px;
+    max-height: 120px;
+    color: aliceblue;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.804) 80%, rgba(128, 128, 128, 0));
+    border-radius: 8%;
+
+}
+
+.title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.boton {
+    margin-top: 10px;
+    background-color: #D62247;
+    color: white;
+    width: 85px;
+    height: 35px;
+    font-size: 10pt;
+}
+
+.boton:hover {
+    background-color: #96152f;
+}
+
+.icono:hover {
+    color: #D62247;
+}

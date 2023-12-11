@@ -1,0 +1,47 @@
+<div class="fondoImg">
+    <app-cartelera></app-cartelera>
+</div>
+
+<div class="container pt-4">
+    <h4>Cast</h4>
+    <div class="d-flex justify-content-between">
+
+        <ul class="list-group list-group-horizontal position-relative overflow-auto">
+            <app-cast-list class="list-group-item mx-5" *ngFor="let c of castList" [cast]="c"></app-cast-list>
+        </ul>
+
+        <div class="pe-2">
+            <app-some-details></app-some-details>
+        </div>
+    </div>
+</div>
+
+<div class="container pt-5">
+    <h5>Reviews</h5>
+</div>
+<div class="container d-flex justify-content-between mb-4">
+    <ul class="list-group list-group-horizontal position-relative overflow-auto">
+        <app-reviews-movie class="list-group-item mx-5" *ngFor="let r of reviewList" [review]="r"></app-reviews-movie>
+    </ul>
+
+    <div class="director">
+        <h5>Director</h5>
+        <img [src]="getImgDirector()" alt="" width="220px" height="245px">
+        <div class="text container">
+            <div class="d-flex justify-content-between">
+
+                <div class="title">
+                    <h5 class="title"><strong>{{director?.name}}</strong></h5>
+                </div>
+
+            </div>
+            <div class="mt-auto d-flex justify-content-between">
+
+                <div class="pt-2">
+                    <p>{{director?.department}}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

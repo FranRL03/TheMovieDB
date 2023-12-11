@@ -1,0 +1,23 @@
+<div class="card text-bg-secondary mb-3 review">
+    <div class="card-header">
+        <ng-container *ngIf="review.author_details.name.length > 0 || getImage().length > 0">
+            <img *ngIf="getImage()" [src]="getImage()" class="rounded-circle">
+            <span *ngIf="review.author_details.name" class="ps-2">{{review.author_details.name}}</span>
+        </ng-container>
+
+        <ng-container *ngIf="review.author_details.name.length === 0">
+            <span class="ps-2">User</span>
+        </ng-container>
+        <br>
+        <span class="ps-3">{{review.author_details.rating}}.0</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="yellow" class="bi bi-star-fill"
+            class="ps-2" viewBox="0 0 16 16">
+            <path
+                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+        </svg>
+    </div>
+
+    <div class="card-body content">
+        <p class="card-text ">{{review.content}}</p>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+.degradado img {
+    margin-top: 110px;
+}
+
+.degradado {
+    height: 1130px;
+    background: linear-gradient(to bottom left, #D62247, #087E8B);
+    min-width: 25%;
+    max-width: 25%;
+}
+
+.item {
+    padding-left: 6%;
+}
+
+.caja {
+    margin-top: 50px;
+}
+
+.degradado .avatar {
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+}
+
+* {
+    --bs-nav-tabs-link-active-color: #d64361;
+    --bs-nav-link-color: rgb(177, 177, 177);
+    --bs-link-hover-color: rgb(215, 215, 215);
+}
+
+.ngbNavContent {
+    width: 100%;
+}
+
+.menu {
+    width: 75%;
+}
+
+.lists {
+    max-height: 950px;
+    overflow-y: auto;
+}
+
+.lists::-webkit-scrollbar {
+    height: 12px;
+}
+
+.lists::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+.lists::-webkit-scrollbar-thumb {
+    background: #D62247;
+    border-radius: 6px;
+}
+
+.lists::-webkit-scrollbar-thumb:hover {
+    background: #90152F;
+}

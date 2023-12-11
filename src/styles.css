@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    --bs-pagination-color: #ccc;
+    --bs-pagination-active-bg: #D62247;
+    --bs-pagination-active-border-color: rgb(68, 68, 68);
+    --bs-pagination-hover-color: #5a5a5a;
+    --bs-body-bg: black;
+    --bs-pagination-border-color: rgb(68, 68, 68);
+    --bs-secondary-bg: rgb(119, 119, 119);
+    --bs-secondary-color: #ccc;
+    --bs-border-color: rgb(68, 68, 68);
+}
+
+body {
+    background-color: #1A1A1A;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    margin-top: 30px;
+}
