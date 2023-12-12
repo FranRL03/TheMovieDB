@@ -3,6 +3,9 @@ import { Movie } from '../../models/movie-list.interface';
 import { AccountService } from '../../services/account.service';
 import { List } from '../../models/getLists.interface';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ListDetailsResponse } from '../../models/list-details.interface';
+import { Router } from '@angular/router';
+import { AddListResponse } from '../../models/add-list.interface';
 
 
 @Component({
@@ -25,7 +28,10 @@ export class PageProfileComponent implements OnInit {
   countWatchList: number = 0;
   countList: number = 0;
 
-  constructor(private accountService: AccountService, private modalService: NgbModal) { }
+  name!: string;
+  description!: string;
+
+  constructor(private accountService: AccountService, private modalService: NgbModal, private route: Router) { }
 
   ngOnInit(): void {
     this.accountService.getFavorites().subscribe(resp => {
@@ -53,4 +59,11 @@ export class PageProfileComponent implements OnInit {
   openVerticallyCentered(content: TemplateRef<any>) {
     this.modalService.open(content, { centered: true });
   }
+
+  addList() {
+    this.accountService.addList(this.name, this.description).subscribe((x: AddListResponse) => {
+      console.log('Lista ' + x.list_id + ' añadida' );
+      window.location.reload();
+    });
+    }
 }

@@ -46,7 +46,7 @@
                                     </svg>Create list</button>
                             </div>
                             <div class="row">
-                                <app-list class="col-3 ps-5 pt-3" *ngFor="let l of movieLists" [list]="l"></app-list>
+                                <app-list class="col-3 ps-5 pt-5" *ngFor="let l of movieLists" [list]="l"></app-list>
                             </div>
                         </div>
                     </div>
@@ -69,12 +69,14 @@
             <form action="">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">List Name</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="name" name="name"
+                    required>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" cols="10"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" cols="10" [(ngModel)]="description" name="description"></textarea>
                 </div>
+                <button class="btn btn-primary" type="button" (click)="addList()" (click)="modal.close('Close click')">Create</button>
             </form>
         </div>
     </div>

@@ -8,6 +8,7 @@ import { AddItemResponse } from '../models/add-item.interface';
 import { environment } from '../../environments/environment.development';
 import { ListsResponse } from '../models/getLists.interface';
 import { AddListResponse } from '../models/add-list.interface';
+import { ListDetailsResponse } from '../models/list-details.interface';
 
 
 
@@ -97,11 +98,11 @@ export class AccountService {
     )
   }
 
-  addList(name: String, descripcion: String): Observable<AddListResponse> {
+  addList(name: String, description: String): Observable<AddListResponse> {
     return this.http.post<AddListResponse>(`${environment.baseUrl}/list`,
       {
         name: name,
-        descripcion: descripcion
+        description: description
       },
       {
         headers: {

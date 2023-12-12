@@ -33,6 +33,7 @@ import { PageUpcomingListComponent } from './ui/page-upcoming-list/page-upcoming
 import { FullWithCarrusellComponent } from './components/carrusel/full-with-carrusell/full-with-carrusell.component';
 import { NgModule } from '@angular/core';
 import { ListComponent } from './components/movie/list/list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { ListComponent } from './components/movie/list/list.component';
     AppRoutingModule,
     NgbModule,
     NgbNavModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -60,8 +60,14 @@
 }
 
 .addList {
-    background-color: rgb(216, 216, 216);
-    color: black;
+    /* background-color: rgb(216, 216, 216); */
+    background-color: #b9314c;
+    /* color: black; */
+    color: white;
+}
+
+.addList:hover{
+    background-color: #b9314ca0;
 }
 
 .form-control {
