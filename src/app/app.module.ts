@@ -32,8 +32,9 @@ import { PageSerieListComponent } from './ui/page-serie-list/page-serie-list.com
 import { PageUpcomingListComponent } from './ui/page-upcoming-list/page-upcoming-list.component';
 import { FullWithCarrusellComponent } from './components/carrusel/full-with-carrusell/full-with-carrusell.component';
 import { NgModule } from '@angular/core';
-import { ListComponent } from './components/movie/list/list.component';
+import { ListComponent } from './components/list/list-item/list.component';
 import { FormsModule } from '@angular/forms';
+import { ListItemDetailsComponent } from './components/list/list-item-details/list-item-details.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { FormsModule } from '@angular/forms';
     TemporadaComponent,
     ReviewsSerieComponent,
     PageProfileComponent,
-    ListComponent
+    ListComponent,
+    ListItemDetailsComponent
   ],
   imports: [
     BrowserModule,
