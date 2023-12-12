@@ -7,6 +7,7 @@ import { MovieListResponse } from '../models/movie-list.interface';
 import { AddItemResponse } from '../models/add-item.interface';
 import { environment } from '../../environments/environment.development';
 import { ListsResponse } from '../models/getLists.interface';
+import { AddListResponse } from '../models/add-list.interface';
 
 
 
@@ -48,16 +49,16 @@ export class AccountService {
       });
   }
 
-  getList(): Observable<ListsResponse>{
+  getList(): Observable<ListsResponse> {
     let sessionId = localStorage.getItem('SESSION_ID');
     let accountId = localStorage.getItem('ACCOUNT_ID');
     return this.http.get<ListsResponse>(`https://api.themoviedb.org/3/account/${accountId}/lists?session_id=${sessionId}`,
-    {
-      headers: {
-        'accept': 'application/json',
-        'Authorization': `Bearer ${environment.tmdbTokenFran}`
-      }
-    })
+      {
+        headers: {
+          'accept': 'application/json',
+          'Authorization': `Bearer ${environment.tmdbTokenFran}`
+        }
+      })
   }
 
   addWatchListsMovies(id: number): Observable<AddItemResponse> {
@@ -94,6 +95,20 @@ export class AccountService {
         }
       }
     )
+  }
+
+  addList(): Observable<AddListResponse> {
+    return this.http.post<AddListResponse>(`${environment.baseUrl}/list`,
+      {
+        name: "movie",
+        lenguage: true
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${environment.tmdbTokenFran}`
+        }
+      })
   }
 
   removeWatchListsMovies(id: number): Observable<AddItemResponse> {
@@ -149,6 +164,8 @@ export class AccountService {
       }
     );
   }
+
+
 }
 
 

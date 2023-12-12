@@ -58,3 +58,8 @@
 .lists::-webkit-scrollbar-thumb:hover {
     background: #90152F;
 }
+
+.addList {
+    background-color: rgb(216, 216, 216);
+    color: black;
+}
