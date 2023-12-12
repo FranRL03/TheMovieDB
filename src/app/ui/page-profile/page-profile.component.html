@@ -38,9 +38,9 @@
                     <div class="lists">
                         <div class="container">
                             <div class="pe-3 pt-3 d-flex justify-content-end">
-                                <button type="button" class="btn addList"><svg xmlns="http://www.w3.org/2000/svg"
-                                        width="30" height="30" fill="currentColor" class="bi bi-plus"
-                                        viewBox="0 0 16 16">
+                                <button type="button" class="btn addList" (click)="openVerticallyCentered(content)"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                        class="bi bi-plus" viewBox="0 0 16 16">
                                         <path
                                             d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
                                     </svg>Create list</button>
@@ -57,3 +57,25 @@
         <div [ngbNavOutlet]="nav" class="mt-2"></div>
     </div>
 </div>
+
+<ng-template #content let-modal>
+    <div class="text-light">
+        <div class="modal-header bg-secondary">
+            <h4 class="modal-title">Create new list</h4>
+            <button type="button" class="btn-close btn-light" aria-label="Close"
+                (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body bg-secondary">
+            <form action="">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">List Name</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" cols="10"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+</ng-template>

@@ -63,3 +63,7 @@
     background-color: rgb(216, 216, 216);
     color: black;
 }
+
+.form-control {
+    background-color: rgb(211, 211, 211);
+}

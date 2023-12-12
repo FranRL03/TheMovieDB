@@ -97,11 +97,11 @@ export class AccountService {
     )
   }
 
-  addList(): Observable<AddListResponse> {
+  addList(name: String, descripcion: String): Observable<AddListResponse> {
     return this.http.post<AddListResponse>(`${environment.baseUrl}/list`,
       {
-        name: "movie",
-        lenguage: true
+        name: name,
+        descripcion: descripcion
       },
       {
         headers: {

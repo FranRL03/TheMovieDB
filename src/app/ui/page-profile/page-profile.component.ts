@@ -1,7 +1,8 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, TemplateRef } from '@angular/core';
 import { Movie } from '../../models/movie-list.interface';
 import { AccountService } from '../../services/account.service';
 import { List } from '../../models/getLists.interface';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class PageProfileComponent implements OnInit {
   countWatchList: number = 0;
   countList: number = 0;
 
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: AccountService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.accountService.getFavorites().subscribe(resp => {
@@ -47,5 +48,9 @@ export class PageProfileComponent implements OnInit {
   }
   getAvatar() {
     return localStorage.getItem('AVATAR');
+  }
+
+  openVerticallyCentered(content: TemplateRef<any>) {
+    this.modalService.open(content, { centered: true });
   }
 }
