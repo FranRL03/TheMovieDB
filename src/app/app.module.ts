@@ -35,6 +35,7 @@ import { NgModule } from '@angular/core';
 import { ListComponent } from './components/list/list-item/list.component';
 import { FormsModule } from '@angular/forms';
 import { ListItemDetailsComponent } from './components/list/list-item-details/list-item-details.component';
+import { PageListDetailsComponent } from './ui/page-list-details/page-list-details.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { ListItemDetailsComponent } from './components/list/list-item-details/li
     ReviewsSerieComponent,
     PageProfileComponent,
     ListComponent,
-    ListItemDetailsComponent
+    ListItemDetailsComponent,
+    PageListDetailsComponent
   ],
   imports: [
     BrowserModule,

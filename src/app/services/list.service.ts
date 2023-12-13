@@ -42,7 +42,7 @@ export class ListService {
   }
 
   getListId(id: number): Observable<ListDetailsResponse> {
-    return this.http.get<ListDetailsResponse>(`${environment.baseUrl}/${id}`,
+    return this.http.get<ListDetailsResponse>(`${environment.baseUrl}${API_BASE_URL}/${id}`,
       {
         headers: {
           'accept': 'application/json',

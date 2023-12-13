@@ -1,0 +1,5 @@
+<div class="container">
+    <div class="row">
+        <app-list-item-details class="col-3 ps-3 pt-5" *ngFor="let lm of listMovies; let i = index" [listDetails]="lm" [movieIndex]="i + 1"></app-list-item-details>
+    </div>
+</div>

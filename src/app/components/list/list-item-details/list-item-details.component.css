@@ -1,0 +1,26 @@
+img {
+    border-radius: 5%;
+}
+
+
+.contenedor {
+    position: relative;
+    min-width: 270px;
+}
+
+.text {
+    position: absolute;
+    bottom: 0;
+    max-width: 270px;
+    color: aliceblue;
+    border-radius: 5%;
+    max-height: 40px;
+    background-color: #105667;
+
+} 
+
+.title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

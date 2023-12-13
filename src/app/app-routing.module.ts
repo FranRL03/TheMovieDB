@@ -11,6 +11,7 @@ import { PageProfileComponent } from './ui/page-profile/page-profile.component';
 import { PageSerieDetailsComponent } from './ui/page-serie-details/page-serie-details.component';
 import { PageSerieListComponent } from './ui/page-serie-list/page-serie-list.component';
 import { PageUpcomingListComponent } from './ui/page-upcoming-list/page-upcoming-list.component';
+import { PageListDetailsComponent } from './ui/page-list-details/page-list-details.component';
 
 const routes: Routes = [
   { path: 'page-home', component: PageHomeComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'page-serie-details/:id', component: PageSerieDetailsComponent },
   { path: 'approved', component: AuthenticationApprovedComponent },
   { path: 'page-profile', component: PageProfileComponent },
+  { path: 'page-list/:id', component: PageListDetailsComponent},
   { path: '', pathMatch: 'full', redirectTo: '/page-home' },
   { path: '**', component: PageNotFoundComponent }
 ];
