@@ -1,7 +1,9 @@
-<div class="card text-center text-light">
+<!-- <button type="button" (click)="listDetails()"> -->
+<div class="card text-center text-light" (click)="listDetails()">
     <h2 class="pt-3">{{list.name}}</h2>
     <ul>
         <li>{{list.item_count}} elements</li>
         <li class="pt-2">Type: <span class="tag">{{list.list_type}}</span></li>
     </ul>
 </div>
+<!-- </button> -->

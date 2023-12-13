@@ -6,6 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ListDetailsResponse } from '../../models/list-details.interface';
 import { Router } from '@angular/router';
 import { AddListResponse } from '../../models/add-list.interface';
+import { ListService } from '../../services/list.service';
 
 
 @Component({
@@ -31,7 +32,7 @@ export class PageProfileComponent implements OnInit {
   name!: string;
   description!: string;
 
-  constructor(private accountService: AccountService, private modalService: NgbModal, private route: Router) { }
+  constructor(private accountService: AccountService, private modalService: NgbModal, private route: Router, private service: ListService) { }
 
   ngOnInit(): void {
     this.accountService.getFavorites().subscribe(resp => {
@@ -44,7 +45,7 @@ export class PageProfileComponent implements OnInit {
       const watchListsIds = this.movieListWatchList.map(movie => movie.id);
       localStorage.setItem('WATCHLISTS_IDS', watchListsIds.toString());
     });
-    this.accountService.getList().subscribe(resp => {
+    this.service.getList().subscribe(resp => {
       this.movieLists = resp.results;
     });
   }
@@ -61,9 +62,9 @@ export class PageProfileComponent implements OnInit {
   }
 
   addList() {
-    this.accountService.addList(this.name, this.description).subscribe((x: AddListResponse) => {
-      console.log('Lista ' + x.list_id + ' añadida' );
+    this.service.addList(this.name, this.description).subscribe((x: AddListResponse) => {
+      console.log('Lista ' + x.list_id + ' añadida');
       window.location.reload();
     });
-    }
+  }
 }

@@ -50,18 +50,6 @@ export class AccountService {
       });
   }
 
-  getList(): Observable<ListsResponse> {
-    let sessionId = localStorage.getItem('SESSION_ID');
-    let accountId = localStorage.getItem('ACCOUNT_ID');
-    return this.http.get<ListsResponse>(`https://api.themoviedb.org/3/account/${accountId}/lists?session_id=${sessionId}`,
-      {
-        headers: {
-          'accept': 'application/json',
-          'Authorization': `Bearer ${environment.tmdbTokenFran}`
-        }
-      })
-  }
-
   addWatchListsMovies(id: number): Observable<AddItemResponse> {
     let accountId = localStorage.getItem('ACCOUNT_ID');
     let sessionId = localStorage.getItem('SESSION_ID');
@@ -96,20 +84,6 @@ export class AccountService {
         }
       }
     )
-  }
-
-  addList(name: String, description: String): Observable<AddListResponse> {
-    return this.http.post<AddListResponse>(`${environment.baseUrl}/list`,
-      {
-        name: name,
-        description: description
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${environment.tmdbTokenFran}`
-        }
-      })
   }
 
   removeWatchListsMovies(id: number): Observable<AddItemResponse> {
