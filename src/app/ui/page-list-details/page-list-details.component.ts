@@ -8,21 +8,28 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './page-list-details.component.html',
   styleUrl: './page-list-details.component.css'
 })
-export class PageListDetailsComponent implements OnInit{
+export class PageListDetailsComponent implements OnInit {
 
-  listMovies: Item [] = [];
+  listMovies: Item[] = [];
   id!: number;
   route: ActivatedRoute = inject(ActivatedRoute);
 
 
-  constructor(private serviceList: ListService){
+  constructor(private serviceList: ListService) {
     this.id = this.route.snapshot.params['id'];
   }
 
-ngOnInit(): void {
-  this.serviceList.getListId(this.id).subscribe( resp =>{
-    this.listMovies = resp.items;
-  })
-}
+  ngOnInit(): void {
+    this.serviceList.getListId(this.id).subscribe(resp => {
+      this.listMovies = resp.items;
+    })
+  }
+
+  getUsername() {
+    return localStorage.getItem('USERNAME');
+  }
+  getAvatar() {
+    return localStorage.getItem('AVATAR');
+  }
 
 }

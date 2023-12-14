@@ -1,0 +1,24 @@
+.caja {
+    margin-top: 50px;
+}
+
+.degradado .avatar {
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+}
+
+.degradado img {
+    margin-top: 110px;
+}
+
+.degradado {
+    height: 1130px;
+    background: linear-gradient(to bottom left, #D62247, #087E8B);
+    min-width: 25%;
+    max-width: 25%;
+}
+
+h1 {
+    font-size: 50px;
+}

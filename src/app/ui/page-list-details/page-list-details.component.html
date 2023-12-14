@@ -1,5 +1,17 @@
-<div class="container">
-    <div class="row">
-        <app-list-item-details class="col-3 ps-3 pt-5" *ngFor="let lm of listMovies; let i = index" [listDetails]="lm" [movieIndex]="i + 1"></app-list-item-details>
+<div class="d-flex caja">
+    <div class="degradado text-center">
+        <h1 class="pt-5 text-light">Created
+            <br>
+            by:
+        </h1>
+        <img [src]="getAvatar()" alt="Avatar del usuario" class="mb-4 avatar">
+        <h2 class="text-light">{{getUsername()}}</h2>
+        <!-- <img src="./assets/img/logoTMDB.png" alt="Logotipo de la web" class="w-75"> -->
+    </div>
+    <div class="container">
+        <div class="row">
+            <app-list-item-details class="col-3 ps-3 pt-5" *ngFor="let lm of listMovies; let i = index"
+                [listDetails]="lm" [movieIndex]="i + 1"></app-list-item-details>
+        </div>
     </div>
 </div>
