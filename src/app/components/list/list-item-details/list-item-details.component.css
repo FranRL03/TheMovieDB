@@ -17,10 +17,14 @@ img {
     max-height: 40px;
     background-color: #105667;
 
-} 
+}
 
 .title {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.tipo {
+    border-radius: 2%;
 }

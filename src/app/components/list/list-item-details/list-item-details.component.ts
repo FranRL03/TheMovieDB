@@ -14,4 +14,5 @@ export class ListItemDetailsComponent {
   getImage() {
     return `https://www.themoviedb.org/t/p/w220_and_h330_multi_faces${this.listDetails.backdrop_path}`
   }
+
 }
