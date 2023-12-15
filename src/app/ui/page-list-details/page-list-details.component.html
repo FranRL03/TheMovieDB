@@ -9,9 +9,29 @@
         <!-- <img src="./assets/img/logoTMDB.png" alt="Logotipo de la web" class="w-75"> -->
     </div>
     <div class="container">
+        <div class="pt-5 d-flex justify-content-end">
+            <button type="button" class="delete btn" (click)="openVerticallyCentered(content)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                  </svg> Delete</button>
+        </div>
         <div class="row">
-            <app-list-item-details class="col-3 ps-3 pt-5" *ngFor="let lm of listMovies; let i = index"
+            <app-list-item-details class="col-3 pt-5" *ngFor="let lm of listMovies; let i = index"
                 [listDetails]="lm" [movieIndex]="i + 1"></app-list-item-details>
         </div>
     </div>
 </div>
+
+<ng-template #content let-modal>
+    <div class="text-light">
+        <div class="modal-header bg-secondary">
+            <h4 class="modal-title">Do you want to delete the list?</h4>
+            <button type="button" class="btn-close btn-light" aria-label="Close"
+                (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body bg-secondary d-flex justify-content-end">
+            <button class="btn btn-danger" type="button" (click)="delete()">Delete</button>
+            <button class="btn btn-warning" type="button" (click)="modal.close('Close click')">Close</button>
+        </div>
+    </div>
+</ng-template>

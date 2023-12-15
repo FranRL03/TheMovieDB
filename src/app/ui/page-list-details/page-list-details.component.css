@@ -22,3 +22,8 @@
 h1 {
     font-size: 50px;
 }
+
+.delete{
+    background-color: #b9314ca0;
+    color: white;
+}

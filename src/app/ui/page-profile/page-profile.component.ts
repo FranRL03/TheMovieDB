@@ -3,7 +3,6 @@ import { Movie } from '../../models/movie-list.interface';
 import { AccountService } from '../../services/account.service';
 import { List } from '../../models/getLists.interface';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ListDetailsResponse } from '../../models/list-details.interface';
 import { Router } from '@angular/router';
 import { AddListResponse } from '../../models/add-list.interface';
 import { ListService } from '../../services/list.service';

@@ -5,6 +5,7 @@ import { environment } from '../../environments/environment.development';
 import { AddListResponse } from '../models/add-list.interface';
 import { ListsResponse } from '../models/getLists.interface';
 import { ListDetailsResponse } from '../models/list-details.interface';
+import { AddItemResponse } from '../models/add-item.interface';
 
 const API_BASE_URL = '/list';
 
@@ -49,5 +50,15 @@ export class ListService {
           'Authorization': `Bearer ${environment.tmdbTokenFran}`
         }
       });
+  }
+
+  deleteList(id: number): Observable<AddItemResponse> {
+    return this.http.delete<AddItemResponse>(`${environment.baseUrl}${API_BASE_URL}/${id}`,
+    {
+      headers: {
+        'accept': 'application/json',
+        'Authorization': `Bearer ${environment.tmdbTokenFran}`
+      }
+    });
   }
 }
