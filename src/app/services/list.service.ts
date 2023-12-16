@@ -6,6 +6,7 @@ import { AddListResponse } from '../models/add-list.interface';
 import { ListsResponse } from '../models/getLists.interface';
 import { ListDetailsResponse } from '../models/list-details.interface';
 import { AddItemResponse } from '../models/add-item.interface';
+import { Response } from '../models/reponse.interface';
 
 const API_BASE_URL = '/list';
 
@@ -37,7 +38,7 @@ export class ListService {
       {
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${environment.tmdbTokenFran}${API_BASE_URL}`
+          'Authorization': `Bearer ${environment.tmdbTokenFran}`
         }
       });
   }
@@ -58,6 +59,17 @@ export class ListService {
       headers: {
         'accept': 'application/json',
         'Authorization': `Bearer ${environment.tmdbTokenFran}`
+      }
+    });
+  }
+
+  clearList(id: number): Observable<Response>{
+    let sessionId = localStorage.getItem('SESSION_ID');
+    return this.http.post<Response>(`${environment.baseUrl}${API_BASE_URL}/${id}/clear?session_id=${sessionId}&confirm=true`,
+    {
+      headers: {
+        'Authorization': `Bearer ${environment.tmdbTokenFran}`,
+        'accept': 'application/json'
       }
     });
   }

@@ -46,4 +46,10 @@ export class PageListDetailsComponent implements OnInit {
     window.location.href = `http://localhost:4200/page-profile`
   }
 
+  clear(){
+    console.log('Lista con ID ' + this.id + ' limpia');
+    this.serviceList.clearList(this.id).subscribe();
+    // window.location.reload();
+  }
+
 }
