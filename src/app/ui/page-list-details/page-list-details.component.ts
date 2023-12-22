@@ -47,9 +47,10 @@ export class PageListDetailsComponent implements OnInit {
   }
 
   clear(){
-    console.log('Lista con ID ' + this.id + ' limpia');
-    this.serviceList.clearList(this.id).subscribe();
-    // window.location.reload();
+    this.serviceList.clearList(this.id).subscribe(() => {
+      window.location.reload();
+    });
+   
   }
 
 }

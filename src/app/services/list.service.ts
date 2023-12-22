@@ -63,13 +63,13 @@ export class ListService {
     });
   }
 
-  clearList(id: number): Observable<Response>{
+  clearList(id: number): Observable<ListDetailsResponse>{
     let sessionId = localStorage.getItem('SESSION_ID');
-    return this.http.post<Response>(`${environment.baseUrl}${API_BASE_URL}/${id}/clear?session_id=${sessionId}&confirm=true`,
+    return this.http.post<ListDetailsResponse>(`${environment.baseUrl}${API_BASE_URL}/${id}/clear?confirm=true&session_id=${sessionId}`,
+    {},
     {
       headers: {
         'Authorization': `Bearer ${environment.tmdbTokenFran}`,
-        'accept': 'application/json'
       }
     });
   }
