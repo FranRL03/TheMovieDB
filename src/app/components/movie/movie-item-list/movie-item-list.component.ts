@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { Movie } from '../../../models/movie-list.interface';
 import { AccountService } from '../../../services/account.service';
 
@@ -14,7 +14,13 @@ export class MovieItemListComponent implements OnInit {
   favoriteIds!: string | null;
   isFavoriteMovie: boolean = false;
 
-  constructor(private router: Router, private accountService: AccountService) { }
+  constructor(private router: Router, private accountService: AccountService) {
+    this.router.events.subscribe(e => {
+      if (e instanceof NavigationEnd){
+        window.scrollTo(0, 0);
+      }
+    });
+   }
 
   ngOnInit() {
     const isloggedIn = localStorage.getItem('isLoggedIn');

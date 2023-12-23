@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Cast } from '../../models/credits.interface';
 import { Reviews } from '../../models/reviews.interface';
 import { MovieService } from '../../services/movie.service';
@@ -19,8 +19,13 @@ export class PageMovieDetailsComponent implements OnInit {
 
   director: Cast | undefined;
 
-  constructor(private service: MovieService) {
+  constructor(private service: MovieService, private router: Router) {
     this.id = this.route.snapshot.params['id'];
+    this.router.events.subscribe(e => {
+      if (e instanceof NavigationEnd){
+        window.scrollTo(0, 0);
+      }
+    });
   }
 
   ngOnInit(): void {
